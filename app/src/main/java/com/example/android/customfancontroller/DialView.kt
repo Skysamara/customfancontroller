@@ -58,6 +58,7 @@ class DialView @JvmOverloads constructor(
             fanSpeedMediumColor = getColor(R.styleable.DialView_fanColor2, 0)
             fanSpeedMaxColor = getColor(R.styleable.DialView_fanColor3, 0)
         }
+        updateContentDescription()
     }
 
     override fun performClick(): Boolean {
@@ -65,7 +66,7 @@ class DialView @JvmOverloads constructor(
 
         fanSpeed = fanSpeed.next()
         contentDescription = resources.getString(fanSpeed.label)
-
+        updateContentDescription()
         invalidate()
         return true
     }
@@ -113,5 +114,8 @@ class DialView @JvmOverloads constructor(
 
     }
 
+    fun updateContentDescription(){
+        contentDescription = resources.getString(fanSpeed.label)
+    }
 
 }
