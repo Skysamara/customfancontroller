@@ -40,11 +40,13 @@ class DialView @JvmOverloads constructor(
     // position variable which will be used to draw label and indicator circle position
     private val pointPosition: PointF = PointF(0.0f, 0.0f)
 
-    private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+//    private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+    private val paint = Paint().apply {
         style = Paint.Style.FILL
         textAlign = Paint.Align.CENTER
         textSize = 30.0f
         typeface = Typeface.create( "", Typeface.BOLD)
+        flags = Paint.ANTI_ALIAS_FLAG
     }
     private var fanSpeedLowColor = 0
     private var fanSpeedMediumColor = 0
